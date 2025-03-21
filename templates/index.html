@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>感情分析ビューア</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>ツイート感情分析結果</h1>
+  {% for tweet in tweets %}
+    <div class="tweet">
+      <div class="timestamp">🕒 {{ tweet.timestamp }}</div>
+      <div class="score">感情スコア: {{ tweet.sentiment }}（{{ tweet.score }}%）</div>
+      <div class="content">{{ tweet.text }}</div>
+    </div>
+  {% endfor %}
+</body>
+</html>
